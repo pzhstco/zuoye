@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江湖百晓生 · 武侠名场面图鉴</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">⚔️</span>
+            <h1>江湖百晓生</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">首页</a></li>
+                <li><a href="#cards">图鉴</a></li>
+                <li><a href="#about">关于</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h2>江湖风云录</h2>
+            <p>刀光剑影，侠骨柔情，尽在此间</p>
+        </div>
+    </section>
+
+    <section id="cards" class="main-content">
+        <div class="sidebar">
+            <div class="api-card">
+                <h3>今日箴言</h3>
+                <div id="hitokoto" class="hitokoto">剑气凝聚中...</div>
+                <div class="hitokoto-author"></div>
+            </div>
+            <div class="api-card">
+                <h3>江湖动态</h3>
+                <div class="random-image-container">
+                    <img id="random-image" src="https://picsum.photos/300/200?random=1" alt="江湖风景">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="search-filter">
+                <div class="search-box-wrapper">
+                    <input type="text" id="search-input" placeholder="搜索江湖人物、兵器、招式..." class="search-box">
+                    <button id="search-btn" class="search-btn">🔍</button>
+                </div>
+                <div class="filter-tags">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="人物">人物</button>
+                    <button class="filter-btn" data-filter="兵器">兵器</button>
+                    <button class="filter-btn" data-filter="招式">招式</button>
+                    <button class="filter-btn" data-filter="门派">门派</button>
+                </div>
+                <div class="sort-options">
+                    <button id="sort-desc" class="sort-btn active">点赞 ↓</button>
+                    <button id="sort-asc" class="sort-btn">点赞 ↑</button>
+                </div>
+            </div>
+
+            <div id="cards-container" class="cards-container">
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    <span class="empty-icon">📜</span>
+                    <p>暂无此等江湖豪杰</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>关于江湖百晓生</h2>
+        <p>江湖百晓生，通晓武林中各门各派、神兵利器、绝世武功。</p>
+        <p>本图鉴收录江湖中流传的英雄人物、神兵利器与独门绝技，供武林同道查阅。</p>
+    </section>
+
+    <footer>
+        <p>© 江湖百晓生 · 武侠名场面图鉴</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">✕</span>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <div class="modal-stats">
+                    <span class="stat-item">分类：<span id="modal-category"></span></span>
+                    <span class="stat-item">点赞：<span id="modal-likes"></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
