@@ -1,10 +1,10 @@
 :root {
     --ink-black: #1a1a1a;
     --paper-white: #f7f4e9;
-    --vermillion-red: #b33b2c;
+    --cinnabar-red: #b33b2c;
     --bamboo-green: #6b8e23;
     --bronze-gold: #c9a96e;
-    --ancient-brown: #5c4033;
+    --gray-stone: #5a5a5a;
 }
 
 * {
@@ -28,7 +28,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid var(--vermillion-red);
+    border-bottom: 1px solid var(--cinnabar-red);
 }
 
 .logo {
@@ -70,7 +70,7 @@ nav a {
 }
 
 nav a:hover {
-    background: var(--vermillion-red);
+    background: var(--cinnabar-red);
     transform: translateY(-2px);
 }
 
@@ -81,7 +81,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, var(--ink-black) 0%, #2d1810 50%, var(--ancient-brown) 100%);
+    background: linear-gradient(135deg, var(--ink-black) 0%, #2d1810 50%, var(--gray-stone) 100%);
     color: var(--paper-white);
     position: relative;
     overflow: hidden;
@@ -103,7 +103,7 @@ nav a:hover {
 .hero-content h2 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: var(--vermillion-red);
+    color: var(--cinnabar-red);
     animation: fadeInUp 1s ease-out;
 }
 
@@ -136,14 +136,14 @@ nav a:hover {
 
 .api-card {
     background: var(--paper-white);
-    border: 1px solid var(--vermillion-red);
+    border: 1px solid var(--cinnabar-red);
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .api-card h3 {
-    color: var(--vermillion-red);
+    color: var(--cinnabar-red);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba(179, 59, 44, 0.3);
@@ -175,7 +175,7 @@ nav a:hover {
     margin-bottom: 2rem;
     padding: 1rem 1.5rem;
     background: var(--paper-white);
-    border: 1px solid var(--vermillion-red);
+    border: 1px solid var(--cinnabar-red);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -187,7 +187,7 @@ nav a:hover {
 
 .search-box {
     padding: 0.6rem 1rem;
-    border: 1px solid var(--vermillion-red);
+    border: 1px solid var(--cinnabar-red);
     border-radius: 20px;
     background: transparent;
     color: var(--ink-black);
@@ -202,9 +202,9 @@ nav a:hover {
 
 .search-btn {
     padding: 0.6rem 1rem;
-    border: 1px solid var(--vermillion-red);
+    border: 1px solid var(--cinnabar-red);
     border-radius: 20px;
-    background: var(--vermillion-red);
+    background: var(--cinnabar-red);
     color: var(--paper-white);
     cursor: pointer;
 }
@@ -217,7 +217,7 @@ nav a:hover {
 
 .filter-btn, .sort-btn {
     padding: 0.5rem 1rem;
-    border: 1px solid var(--vermillion-red);
+    border: 1px solid var(--cinnabar-red);
     border-radius: 20px;
     background: transparent;
     color: var(--ink-black);
@@ -229,7 +229,7 @@ nav a:hover {
 }
 
 .filter-btn.active, .sort-btn.active {
-    background: var(--vermillion-red);
+    background: var(--cinnabar-red);
     color: var(--paper-white);
 }
 
@@ -245,7 +245,7 @@ nav a:hover {
 
 .card {
     background: var(--paper-white);
-    border: 1px solid var(--vermillion-red);
+    border: 1px solid var(--cinnabar-red);
     border-radius: 8px;
     overflow: hidden;
     transition: all 0.4s ease;
@@ -262,9 +262,21 @@ nav a:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(179, 59, 44, 0.2);
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.25);
+    border-bottom: 2px solid var(--cinnabar-red);
 }
 
 .card-image {
@@ -284,28 +296,23 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-.card-overlay {
+.card-image::after {
+    content: '查看详情';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(179, 59, 44, 0.7);
+    inset: 0;
+    background: rgba(179, 59, 44, 0.8);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: serif;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s;
+    cursor: pointer;
 }
 
-.card:hover .card-overlay {
+.card:hover .card-image::after {
     opacity: 1;
-}
-
-.card-overlay-text {
-    color: var(--paper-white);
-    font-size: 1.2rem;
-    font-weight: bold;
 }
 
 .card-content {
@@ -317,13 +324,13 @@ nav a:hover {
 }
 
 .card-title {
-    color: var(--vermillion-red);
+    color: var(--cinnabar-red);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
 
 .card-description {
-    color: var(--ancient-brown);
+    color: var(--gray-stone);
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 0.8rem;
@@ -354,7 +361,7 @@ nav a:hover {
     gap: 0.3rem;
     background: transparent;
     border: none;
-    color: var(--vermillion-red);
+    color: var(--cinnabar-red);
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 50%;
@@ -391,17 +398,17 @@ nav a:hover {
     padding: 3rem 5%;
     text-align: center;
     background: rgba(179, 59, 44, 0.05);
-    border-top: 2px solid var(--vermillion-red);
-    border-bottom: 2px solid var(--vermillion-red);
+    border-top: 2px solid var(--cinnabar-red);
+    border-bottom: 2px solid var(--cinnabar-red);
 }
 
 .about h2 {
-    color: var(--vermillion-red);
+    color: var(--cinnabar-red);
     margin-bottom: 1rem;
 }
 
 .about p {
-    color: var(--ancient-brown);
+    color: var(--gray-stone);
     line-height: 1.8;
 }
 
@@ -410,29 +417,33 @@ footer {
     padding: 2rem;
     background: var(--ink-black);
     color: var(--paper-white);
-    border-top: 1px solid var(--vermillion-red);
+    border-top: 1px solid var(--cinnabar-red);
 }
 
 .modal {
     display: none;
     position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
 }
 
 .modal.show {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .modal-content {
     background: var(--paper-white);
-    border: 2px solid var(--vermillion-red);
+    border: 2px solid var(--cinnabar-red);
     border-radius: 12px;
     padding: 2rem;
     max-width: 500px;
@@ -450,7 +461,7 @@ footer {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    color: var(--ancient-brown);
+    color: var(--gray-stone);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -464,12 +475,12 @@ footer {
 }
 
 .modal-body h3 {
-    color: var(--vermillion-red);
+    color: var(--cinnabar-red);
     margin-bottom: 1rem;
 }
 
 .modal-body p {
-    color: var(--ancient-brown);
+    color: var(--gray-stone);
     line-height: 1.8;
     margin-bottom: 1rem;
 }
@@ -482,23 +493,34 @@ footer {
 }
 
 .stat-item span {
-    color: var(--vermillion-red);
+    color: var(--cinnabar-red);
     font-weight: bold;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .main-content { flex-direction: column; }
-    .sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; gap: 1rem; }
-    .api-card { flex: 1; min-width: 280px; }
+    .sidebar { width: 100%; flex-direction: column; }
+    .api-card { width: 100%; }
     .search-box { width: 100%; }
     .hero-content h2 { font-size: 2.5rem; }
+    .cards-container { 
+        grid-template-columns: 1fr !important; 
+        gap: 16px !important; 
+    }
+    .filter-bar {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .modal-content {
+        width: 90% !important;
+        margin: 20px auto !important;
+    }
+    body {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 600px) {
-    .cards-container { 
-        grid-template-columns: 1fr; 
-        gap: 1rem;
-    }
     .header { padding: 1rem 3%; }
     .main-content { padding: 2rem 3%; }
     .card-image { height: 220px; }

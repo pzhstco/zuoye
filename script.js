@@ -218,12 +218,9 @@ function renderCards() {
     emptyState.style.display = 'none';
     
     container.innerHTML = currentItems.map((item, index) => `
-        <div class="card" data-id="${item.id}" style="animation-delay: ${index * 0.1}s">
+        <div class="card fade-in-up" data-id="${item.id}" style="animation-delay: ${index * 0.1}s">
             <div class="card-image">
                 <img src="${item.imageUrl}" alt="${item.title}">
-                <div class="card-overlay">
-                    <span class="card-overlay-text">查看详情</span>
-                </div>
             </div>
             <div class="card-content">
                 <h3 class="card-title">${item.title}</h3>
@@ -242,6 +239,21 @@ function renderCards() {
     `).join('');
     
     initLikeButtons();
+    initScrollAnimation();
+}
+
+function initScrollAnimation() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.card').forEach(card => {
+        observer.observe(card);
+    });
 }
 
 function initLikeButtons() {
