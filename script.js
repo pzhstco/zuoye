@@ -1,84 +1,84 @@
 const jianghuItems = [
     {
         id: 1,
-        title: "笑傲江湖 · 令狐冲",
-        category: "人物",
-        description: "华山派大弟子，独孤九剑传人，性格洒脱不羁。",
-        longDescription: "令狐冲是金庸武侠小说《笑傲江湖》中的男主角。他本是华山派掌门岳不群的大弟子，天资聪颖，却因性格洒脱不拘小节而不为师父所喜。因缘际会之下，他习得独孤九剑，成为一代武林高手。令狐冲一生追求自由，最终与任盈盈携手归隐江湖。",
-        imageUrl: "https://picsum.photos/400/300?random=1",
-        likes: 256
+        title: "瑞士阿尔卑斯山脉",
+        category: "自然",
+        description: "欧洲屋脊，白雪皑皑，壮丽山峦绵延天际。",
+        longDescription: "阿尔卑斯山脉是欧洲最高的山脉，横跨瑞士、法国、意大利等多个国家。瑞士段的阿尔卑斯山以其壮丽的雪峰、碧绿的草甸和清澈的湖泊闻名于世，是世界著名的旅游胜地和滑雪天堂。",
+        imageUrl: "https://picsum.photos/400/300?random=10",
+        likes: 456
     },
     {
         id: 2,
-        title: "倚天屠龙记 · 赵敏",
-        category: "人物",
-        description: "蒙古郡主，聪明机智，敢爱敢恨。",
-        longDescription: "赵敏是金庸武侠小说《倚天屠龙记》中的女主角之一。她是元朝汝阳王的女儿，封号绍敏郡主。赵敏容貌美丽，智计百出，擅长权谋。她与张无忌的爱情故事曲折动人，最终放弃郡主身份，追随张无忌。",
-        imageUrl: "https://picsum.photos/400/300?random=2",
-        likes: 189
-    },
-    {
-        id: 3,
-        title: "玄铁重剑",
-        category: "兵器",
-        description: "剑魔独孤求败所铸，重逾千斤。",
-        longDescription: "玄铁重剑是金庸武侠小说中的神兵利器，为剑魔独孤求败所铸造。此剑通体黝黑，重逾千斤，寻常人难以举起。独孤求败曾以此剑横行天下，后将其埋于剑冢之中。杨过断臂后在剑冢中发现此剑，凭此练成绝世武功。",
-        imageUrl: "https://picsum.photos/400/300?random=3",
-        likes: 312
-    },
-    {
-        id: 4,
-        title: "独孤九剑",
-        category: "招式",
-        description: "剑魔独孤求败所创，无招胜有招。",
-        longDescription: "独孤九剑是金庸武侠小说中最顶尖的剑法之一，由剑魔独孤求败所创。这套剑法共有九式：总诀式、破剑式、破刀式、破枪式、破鞭式、破索式、破掌式、破箭式、破气式。其精髓在于'无招胜有招'，能看破对手招式的破绽并加以破解。",
-        imageUrl: "https://picsum.photos/400/300?random=4",
-        likes: 423
-    },
-    {
-        id: 5,
-        title: "武当派",
-        category: "门派",
-        description: "张三丰所创，以太极拳、太极剑闻名。",
-        longDescription: "武当派是金庸武侠小说中的名门正派，由张三丰真人所创。武当派以太极拳、太极剑为独门绝技，讲究以柔克刚、后发制人。武当派历任掌门皆是武林中德高望重的人物，与少林派并称武林两大泰斗。",
-        imageUrl: "https://picsum.photos/400/300?random=5",
-        likes: 167
-    },
-    {
-        id: 6,
-        title: "降龙十八掌",
-        category: "招式",
-        description: "丐帮镇帮绝学，刚猛无俦。",
-        longDescription: "降龙十八掌是金庸武侠小说中丐帮的镇帮绝学，刚猛无俦，威力无穷。这套掌法共有十八式，每一招都蕴含着无穷的力量。历代丐帮帮主如乔峰、洪七公、郭靖等人都曾以此掌法威震武林。",
-        imageUrl: "https://picsum.photos/400/300?random=6",
+        title: "日本京都古街",
+        category: "城市",
+        description: "千年古都，韵味十足，传统与现代完美融合。",
+        longDescription: "京都是日本的文化古都，拥有众多世界文化遗产。这里保存了大量传统的町屋、神社和寺庙。漫步在�的�的花见小路，可以感受到浓厚的日本传统文化氛围。",
+        imageUrl: "https://picsum.photos/400/300?random=11",
         likes: 389
     },
     {
+        id: 3,
+        title: "巴黎埃菲尔铁塔",
+        category: "建筑",
+        description: "浪漫之都的地标，钢铁杰作的永恒魅力。",
+        longDescription: "埃菲尔铁塔是巴黎最著名的标志性建筑，建于1889年，高324米。这座铁塔最初是为世界博览会而建，如今已成为法国浪漫和优雅的象征，每年吸引数百万游客前来观赏。",
+        imageUrl: "https://picsum.photos/400/300?random=12",
+        likes: 567
+    },
+    {
+        id: 4,
+        title: "意大利威尼斯水城",
+        category: "城市",
+        description: "水上都市，浪漫至极，贡多拉穿行于水巷之间。",
+        longDescription: "威尼斯是意大利东北部的著名水城，由118个小岛组成，以其独特的运河、桥梁和贡多拉船闻名。圣马可广场、叹息桥等景点构成了这座城市独特的浪漫风情。",
+        imageUrl: "https://picsum.photos/400/300?random=13",
+        likes: 445
+    },
+    {
+        id: 5,
+        title: "冰岛极光",
+        category: "自然",
+        description: "绿色光幕舞动天际，北欧奇观的梦幻体验。",
+        longDescription: "冰岛是观赏北极光的最佳地点之一。在漫长的冬夜里，绚丽多彩的极光在夜空中舞动，如同大自然的魔法。绿、蓝、紫色的光带交织成一幅梦幻般的画卷。",
+        imageUrl: "https://picsum.photos/400/300?random=14",
+        likes: 678
+    },
+    {
+        id: 6,
+        title: "中国长城",
+        category: "建筑",
+        description: "万里长城，世界奇迹，中华文明的伟大象征。",
+        longDescription: "长城是世界上最长的人工建筑，全长超过2万公里。它始建于春秋战国时期，历经数千年不断完善。站在长城之上，可以感受到古代劳动人民的智慧和伟大。",
+        imageUrl: "https://picsum.photos/400/300?random=15",
+        likes: 789
+    },
+    {
         id: 7,
-        title: "小李飞刀",
-        category: "兵器",
-        description: "李寻欢独门武器，例不虚发。",
-        longDescription: "小李飞刀是古龙武侠小说《多情剑客无情剑》中李寻欢的独门武器。李寻欢的飞刀短小精悍，却能在瞬息之间取人性命，百发百中，从未失手。'小李飞刀，例不虚发'成为江湖中流传的神话。",
-        imageUrl: "https://picsum.photos/400/300?random=7",
-        likes: 278
+        title: "摩洛哥马拉喀什",
+        category: "人文",
+        description: "红色之城，沙漠边缘的千年古都。",
+        longDescription: "马拉喀什是摩洛哥的历史文化名城，以其红色城墙和热闹非凡的杰马夫纳广场闻名。这里融合了阿拉伯、柏柏尔和欧洲的文化元素，是一个充满异域风情的目的地。",
+        imageUrl: "https://picsum.photos/400/300?random=16",
+        likes: 312
     },
     {
         id: 8,
-        title: "少林派",
-        category: "门派",
-        description: "武林泰斗，博大精深。",
-        longDescription: "少林派是金庸武侠小说中的武林泰斗，创立于北魏时期，历史悠久。少林派武学博大精深，拥有七十二项绝技，如易筋经、少林拳、罗汉拳等。少林派向来以除暴安良、维护正义为己任，是武林中的中流砥柱。",
-        imageUrl: "https://picsum.photos/400/300?random=8",
-        likes: 245
+        title: "新西兰皇后镇",
+        category: "自然",
+        description: "冒险之都，湖泊与雪山的完美结合。",
+        longDescription: "皇后镇位于新西兰南岛，以其壮丽的自然风光和丰富的极限运动项目闻名。瓦卡蒂普湖碧波荡漾，卓越山脉白雪皑皑，这里是《指环王》三部曲的主要取景地。",
+        imageUrl: "https://picsum.photos/400/300?random=17",
+        likes: 423
     }
 ];
 
 const backupQuotes = [
-    { text: "十步杀一人，千里不留行。", author: "李白" },
-    { text: "侠之大者，为国为民。", author: "金庸" },
-    { text: "天下风云出我辈，一入江湖岁月催。", author: "黄霑" },
-    { text: "人在江湖，身不由己。", author: "古龙" },
-    { text: "刀剑如梦，恩怨似风。", author: "周华健" }
+    { text: "世界那么大，我想去看看。", author: "旅行者" },
+    { text: "旅行是最好的阅读，行走是最深的思考。", author: "行者" },
+    { text: "最美的风景，总是在路上。", author: "旅人" },
+    { text: "用脚步丈量世界，用镜头记录美好。", author: "摄影师" },
+    { text: "生活不止眼前的苟且，还有诗和远方。", author: "高晓松" }
 ];
 
 let currentItems = [...jianghuItems];
@@ -95,7 +95,7 @@ function init() {
 }
 
 function loadLikesFromStorage() {
-    const savedLikes = localStorage.getItem('jianghu_likes');
+    const savedLikes = localStorage.getItem('world_viewer_likes');
     if (savedLikes) {
         const likesObj = JSON.parse(savedLikes);
         jianghuItems.forEach(item => {
@@ -111,7 +111,7 @@ function saveLikesToStorage() {
     jianghuItems.forEach(item => {
         likesObj[item.id] = item.likes;
     });
-    localStorage.setItem('jianghu_likes', JSON.stringify(likesObj));
+    localStorage.setItem('world_viewer_likes', JSON.stringify(likesObj));
 }
 
 function fetchHitokoto() {
