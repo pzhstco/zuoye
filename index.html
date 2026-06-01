@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地旅游攻略 - 发现身边的美景</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>🗺️ 本地旅游攻略</h1>
+            <p>探索你身边的隐藏宝藏，发现不一样的风景</p>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="#attractions">景点</a></li>
+                <li><a href="#messages">留言板</a></li>
+                <li><a href="about.html">关于站长</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="🔍 搜索景点名称...">
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="自然风光">🌿 自然风光</button>
+                <button class="filter-btn" data-filter="历史文化">🏛️ 历史文化</button>
+                <button class="filter-btn" data-filter="休闲娱乐">🎢 休闲娱乐</button>
+                <button class="filter-btn" data-filter="户外运动">🥾 户外运动</button>
+                <button class="filter-btn" data-filter="美食购物">🍜 美食购物</button>
+            </div>
+
+            <div class="sort-box">
+                <label for="sort-select">排序：</label>
+                <select id="sort-select">
+                    <option value="default">默认排序</option>
+                    <option value="rating-desc">评分 高→低</option>
+                    <option value="rating-asc">评分 低→高</option>
+                    <option value="name-asc">名称 A→Z</option>
+                    <option value="name-desc">名称 Z→A</option>
+                </select>
+            </div>
+        </div>
+
+        <section id="attractions" class="section">
+            <h2 class="section-title">🏛️ 必游景点</h2>
+            <div id="card-count" class="card-count">显示 12 个景点</div>
+            <div class="card-grid" id="card-grid">
+                <article class="card" data-category="自然风光" data-rating="4.9" data-name="云顶山日出">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+                             alt="山顶日出"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">自然风光</span>
+                        <h3>云顶山日出</h3>
+                        <p>站在云顶山之巅，迎接第一缕阳光。最佳观赏时间为凌晨5点至6点，秋季天气最为适宜。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 云顶山风景区</span>
+                            <span class="rating">⭐ 4.9</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="1">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="1">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="1">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="历史文化" data-rating="4.8" data-name="清河古镇">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop"
+                             alt="古镇小巷"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">历史文化</span>
+                        <h3>清河古镇</h3>
+                        <p>保存完好的明清古建筑群，青石板路、古色古香的商铺，品味百年商贾文化。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 清河古镇</span>
+                            <span class="rating">⭐ 4.8</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="2">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="2">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="2">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="自然风光" data-rating="4.7" data-name="碧湖国家湿地公园">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop"
+                             alt="湖泊倒影"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">自然风光</span>
+                        <h3>碧湖国家湿地公园</h3>
+                        <p>城市绿肺，呼吸清新空气。湖面如镜，倒映着天空与山峦，是摄影爱好者的天堂。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 碧湖湿地公园</span>
+                            <span class="rating">⭐ 4.7</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="3">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="3">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="3">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="休闲娱乐" data-rating="4.6" data-name="欢乐海洋王国">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=400&h=300&fit=crop"
+                             alt="主题乐园"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">休闲娱乐</span>
+                        <h3>欢乐海洋王国</h3>
+                        <p>大型主题乐园，适合家庭游玩。拥有众多刺激好玩的游乐设施和精彩表演。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 欢乐海洋王国</span>
+                            <span class="rating">⭐ 4.6</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="4">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="4">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="4">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="户外运动" data-rating="4.8" data-name="翠峰峡谷徒步">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop"
+                             alt="徒步栈道"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">户外运动</span>
+                        <h3>翠峰峡谷徒步</h3>
+                        <p>全程约8公里的峡谷徒步路线，沿途风景秀丽，空气清新，难度适中。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 翠峰峡谷</span>
+                            <span class="rating">⭐ 4.8</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="5">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="5">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="5">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="历史文化" data-rating="4.5" data-name="市博物馆">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=400&h=300&fit=crop"
+                             alt="博物馆"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">历史文化</span>
+                        <h3>市博物馆</h3>
+                        <p>馆藏文物丰富，讲述本地千年历史变迁。免费开放，每周一闭馆。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 市中心文化街</span>
+                            <span class="rating">⭐ 4.5</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="6">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="6">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="6">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="美食购物" data-rating="4.7" data-name="星光夜市">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&h=300&fit=crop"
+                             alt="夜市"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">美食购物</span>
+                        <h3>星光夜市</h3>
+                        <p>当地最具特色的夜市，汇聚各地美食小吃，是体验本地烟火气的最佳去处。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 商业步行街</span>
+                            <span class="rating">⭐ 4.7</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="7">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="7">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="7">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="自然风光" data-rating="4.6" data-name="四季花海">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+                             alt="花海"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">自然风光</span>
+                        <h3>四季花海</h3>
+                        <p>占地200亩的花海乐园，种植了上百种花卉，四季皆有不同花景可供观赏。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 城郊农业园</span>
+                            <span class="rating">⭐ 4.6</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="8">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="8">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="8">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="休闲娱乐" data-rating="4.5" data-name="温泉度假村">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1527442201513-cfe228a41d56?w=400&h=300&fit=crop"
+                             alt="温泉"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1527442201513-cfe228a41d56?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">休闲娱乐</span>
+                        <h3>温泉度假村</h3>
+                        <p>天然温泉资源，放松身心的好去处。冬季泡温泉更是别有一番滋味。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 南郊温泉镇</span>
+                            <span class="rating">⭐ 4.5</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="9">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="9">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="9">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="户外运动" data-rating="4.4" data-name="白马湖骑行绿道">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=300&fit=crop"
+                             alt="骑行绿道"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">户外运动</span>
+                        <h3>白马湖骑行绿道</h3>
+                        <p>环湖骑行绿道全长15公里，沿途风景优美，适合骑行爱好者。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 白马湖景区</span>
+                            <span class="rating">⭐ 4.4</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="10">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="10">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="10">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="美食购物" data-rating="4.6" data-name="老街美食街">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop"
+                             alt="美食街"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">美食购物</span>
+                        <h3>老街美食街</h3>
+                        <p>汇集本地特色小吃和老字号店铺，体验地道美食文化。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 老城街区</span>
+                            <span class="rating">⭐ 4.6</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="11">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="11">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="11">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-category="历史文化" data-rating="4.7" data-name="文庙">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2005?w=400&h=300&fit=crop"
+                             alt="文庙"
+                             loading="lazy"
+                             data-full="https://images.unsplash.com/photo-1523961131990-5ea7c61b2005?w=1200">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">历史文化</span>
+                        <h3>文庙</h3>
+                        <p>始建于宋代，是本地保存最完好的古建筑群之一，具有重要的历史价值。</p>
+                        <div class="card-footer">
+                            <span class="location">📍 文化广场北侧</span>
+                            <span class="rating">⭐ 4.7</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn like-btn" data-id="12">❤️ 0</button>
+                            <button class="action-btn rate-btn" data-id="12">⭐ 评分</button>
+                            <button class="action-btn share-btn" data-id="12">📤 分享</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div id="no-results" class="no-results" style="display: none;">
+            <p>没有找到匹配的景点 😢</p>
+        </div>
+
+        <section id="messages" class="section">
+            <h2 class="section-title">💬 游客留言板</h2>
+            <div class="message-board">
+                <form class="message-form" id="message-form">
+                    <input type="text" id="message-name" placeholder="您的昵称" required>
+                    <textarea id="message-content" placeholder="留下您的留言..." required></textarea>
+                    <button type="submit">发送留言</button>
+                </form>
+
+                <div id="messages-list" class="messages-list">
+                    <div class="message-item">
+                        <div class="message-header">
+                            <span class="message-name">游客小明</span>
+                            <span class="message-date">2026-06-01 10:30</span>
+                        </div>
+                        <div class="message-content">云顶山日出真的太美了！推荐大家一定要去看一次！</div>
+                    </div>
+                    <div class="message-item">
+                        <div class="message-header">
+                            <span class="message-name">旅行达人</span>
+                            <span class="message-date">2026-05-31 15:45</span>
+                        </div>
+                        <div class="message-content">清河古镇的古建筑保存得很好，很有韵味，适合拍照打卡。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="rating-modal" class="rating-modal">
+        <div class="rating-modal-content">
+            <span class="rating-modal-close">&times;</span>
+            <h3>⭐ 为景点评分</h3>
+            <div class="rating-stars" id="rating-stars">
+                <span class="rating-star">★</span>
+                <span class="rating-star">★</span>
+                <span class="rating-star">★</span>
+                <span class="rating-star">★</span>
+                <span class="rating-star">★</span>
+            </div>
+            <p id="rating-value">请选择星级</p>
+            <button id="rating-submit">确认评分</button>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-prev">❮</button>
+        <button class="lightbox-next">❯</button>
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 本地旅游攻略 - 发现身边的美好</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" title="返回顶部">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
