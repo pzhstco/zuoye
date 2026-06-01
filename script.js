@@ -40,92 +40,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function saveLikes() {
-        localStorage.setItem('travelLikes', JSON.stringify(likes));
-    }
+    function saveLikes() { localStorage.setItem('travelLikes', JSON.stringify(likes)); }
 
     function updateMessages() {
         messagesList.innerHTML = '';
         messages.forEach(msg => {
             const messageItem = document.createElement('div');
             messageItem.className = 'message-item';
-            messageItem.innerHTML = `
-                <div class="message-header">
-                    <span class="message-name">${msg.name}</span>
-                    <span class="message-date">${msg.date}</span>
-                </div>
-                <div class="message-content">${msg.content}</div>
-            `;
+            messageItem.innerHTML = `<div class="message-header"><span class="message-name">${msg.name}</span><span class="message-date">${msg.date}</span></div><div class="message-content">${msg.content}</div>`;
             messagesList.appendChild(messageItem);
         });
     }
 
-    function saveMessages() {
-        localStorage.setItem('travelMessages', JSON.stringify(messages));
-    }
+    function saveMessages() { localStorage.setItem('travelMessages', JSON.stringify(messages)); }
 
     function filterAndSortCards() {
         visibleCards = Array.from(cards);
-
         visibleCards.forEach(card => {
             const category = card.dataset.category;
             const name = card.dataset.name.toLowerCase();
             const searchTerm = currentSearch.toLowerCase();
-
             const matchesFilter = currentFilter === 'all' || category === currentFilter;
             const matchesSearch = name.includes(searchTerm);
-
-            if (matchesFilter && matchesSearch) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+            if (matchesFilter && matchesSearch) { card.style.display = 'block'; } else { card.style.display = 'none'; }
         });
-
         if (currentSort !== 'default') {
             const sorted = visibleCards.filter(card => card.style.display !== 'none');
-
             sorted.sort((a, b) => {
-                if (currentSort === 'rating-desc') {
-                    return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
-                } else if (currentSort === 'rating-asc') {
-                    return parseFloat(a.dataset.rating) - parseFloat(b.dataset.rating);
-                } else if (currentSort === 'name-asc') {
-                    return a.dataset.name.localeCompare(b.dataset.name, 'zh-CN');
-                } else if (currentSort === 'name-desc') {
-                    return b.dataset.name.localeCompare(a.dataset.name, 'zh-CN');
-                }
+                if (currentSort === 'rating-desc') return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+                else if (currentSort === 'rating-asc') return parseFloat(a.dataset.rating) - parseFloat(b.dataset.rating);
+                else if (currentSort === 'name-asc') return a.dataset.name.localeCompare(b.dataset.name, 'zh-CN');
+                else if (currentSort === 'name-desc') return b.dataset.name.localeCompare(a.dataset.name, 'zh-CN');
                 return 0;
             });
-
             sorted.forEach(card => cardGrid.appendChild(card));
         }
-
         const visibleCount = visibleCards.filter(card => card.style.display !== 'none').length;
         cardCount.textContent = `显示 ${visibleCount} 个景点`;
-
         noResults.style.display = visibleCount === 0 ? 'block' : 'none';
     }
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
+        if (window.scrollY > 300) { backToTopBtn.classList.add('visible'); } else { backToTopBtn.classList.remove('visible'); }
     });
 
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    searchInput.addEventListener('input', function(e) {
-        currentSearch = e.target.value;
-        filterAndSortCards();
-    });
+    backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    searchInput.addEventListener('input', function(e) { currentSearch = e.target.value; filterAndSortCards(); });
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -136,10 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    sortSelect.addEventListener('change', function() {
-        currentSort = this.value;
-        filterAndSortCards();
-    });
+    sortSelect.addEventListener('change', function() { currentSort = this.value; filterAndSortCards(); });
 
     likeBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
@@ -160,13 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const name = card.dataset.name;
             const shareText = `我在「本地旅游攻略」发现了${name}，这个景点太棒了！`;
             const shareUrl = window.location.href;
-
             if (navigator.share) {
-                navigator.share({
-                    title: name,
-                    text: shareText,
-                    url: shareUrl
-                }).catch(err => console.log('Share cancelled'));
+                navigator.share({ title: name, text: shareText, url: shareUrl }).catch(err => console.log('Share cancelled'));
             } else {
                 const tempInput = document.createElement('input');
                 tempInput.value = `${shareText} ${shareUrl}`;
@@ -185,9 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             currentRatingId = this.dataset.id;
             selectedRating = 0;
-            ratingStars.forEach((star, index) => {
-                star.classList.remove('active');
-            });
+            ratingStars.forEach((star, index) => { star.classList.remove('active'); });
             ratingValue.textContent = '请选择星级';
             ratingModal.classList.add('active');
         });
@@ -196,13 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ratingStars.forEach((star, index) => {
         star.addEventListener('click', function() {
             selectedRating = index + 1;
-            ratingStars.forEach((s, i) => {
-                if (i <= index) {
-                    s.classList.add('active');
-                } else {
-                    s.classList.remove('active');
-                }
-            });
+            ratingStars.forEach((s, i) => { if (i <= index) { s.classList.add('active'); } else { s.classList.remove('active'); } });
             ratingValue.textContent = `您选择了 ${selectedRating} 星`;
         });
     });
@@ -212,25 +156,13 @@ document.addEventListener('DOMContentLoaded', function() {
             ratings[currentRatingId] = selectedRating;
             localStorage.setItem('travelRatings', JSON.stringify(ratings));
             ratingModal.classList.remove('active');
-            
             const rateBtn = document.querySelector(`.rate-btn[data-id="${currentRatingId}"]`);
-            if (rateBtn) {
-                rateBtn.textContent = `⭐ ${selectedRating}星`;
-                rateBtn.style.background = '#ffeaa7';
-                rateBtn.style.color = '#d63031';
-            }
+            if (rateBtn) { rateBtn.textContent = `⭐ ${selectedRating}星`; rateBtn.style.background = '#ffeaa7'; rateBtn.style.color = '#d63031'; }
         }
     });
 
-    ratingClose.addEventListener('click', function() {
-        ratingModal.classList.remove('active');
-    });
-
-    ratingModal.addEventListener('click', function(e) {
-        if (e.target === ratingModal) {
-            ratingModal.classList.remove('active');
-        }
-    });
+    ratingClose.addEventListener('click', function() { ratingModal.classList.remove('active'); });
+    ratingModal.addEventListener('click', function(e) { if (e.target === ratingModal) { ratingModal.classList.remove('active'); } });
 
     const cardImages = document.querySelectorAll('.card-image');
     cardImages.forEach((imgContainer, index) => {
@@ -238,20 +170,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const img = this.querySelector('img');
             const fullImgUrl = img.dataset.full;
             const cardTitle = this.closest('.card').querySelector('h3').textContent;
-
             visibleCards = Array.from(cards).filter(card => card.style.display !== 'none');
             currentLightboxIndex = visibleCards.indexOf(this.closest('.card'));
-
             lightboxImg.src = fullImgUrl;
             lightboxCaption.textContent = cardTitle;
             lightbox.classList.add('active');
         });
     });
 
-    lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
-
+    lightbox.querySelector('.lightbox-close').addEventListener('click', () => { lightbox.classList.remove('active'); });
     lightbox.querySelector('.lightbox-prev').addEventListener('click', () => {
         currentLightboxIndex = (currentLightboxIndex - 1 + visibleCards.length) % visibleCards.length;
         const card = visibleCards[currentLightboxIndex];
@@ -260,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
         lightboxImg.src = img.dataset.full;
         lightboxCaption.textContent = title;
     });
-
     lightbox.querySelector('.lightbox-next').addEventListener('click', () => {
         currentLightboxIndex = (currentLightboxIndex + 1) % visibleCards.length;
         const card = visibleCards[currentLightboxIndex];
@@ -269,12 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lightboxImg.src = img.dataset.full;
         lightboxCaption.textContent = title;
     });
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.classList.remove('active');
-        }
-    });
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) { lightbox.classList.remove('active'); } });
 
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('active')) return;
@@ -287,35 +208,17 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         const name = document.getElementById('message-name').value;
         const content = document.getElementById('message-content').value;
-        
         const now = new Date();
         const dateStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-        
-        messages.unshift({
-            name: name,
-            content: content,
-            date: dateStr
-        });
-        
+        messages.unshift({ name: name, content: content, date: dateStr });
         saveMessages();
         updateMessages();
-        
-        document.getElementById('message-name').value = '';
-        document.getElementById('message-content').value = '';
+        document.getElementById('message-name').value = ''; document.getElementById('message-content').value = '';
     });
 
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } });
     }, observerOptions);
 
     cards.forEach((card, index) => {
