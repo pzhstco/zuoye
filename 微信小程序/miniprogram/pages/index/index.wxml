@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 顶部分数显示 -->
+  <view class="score-header">
+    <view class="score-item">
+      <text class="score-label">当前得分</text>
+      <text class="score-value">{{score}}</text>
+    </view>
+    <view class="score-item">
+      <text class="score-label">历史最高</text>
+      <text class="score-value best">{{bestScore}}</text>
+    </view>
+  </view>
+
+  <!-- 金币区域 -->
+  <view class="coin-area">
+    <view class="coin-wrapper {{animating ? 'coin-pop' : ''}}" bindtap="onCoinTap">
+      <text class="coin-emoji">🪙</text>
+    </view>
+
+    <!-- 飘字特效容器 -->
+    <view class="float-container">
+      <view
+        wx:for="{{floatTexts}}"
+        wx:key="id"
+        class="float-text {{item.show ? 'float-show' : ''}}"
+        style="left: {{item.x}}px; top: {{item.y}}px;"
+      >
+        +1
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="tip-text">点击金币获得分数</view>
+</view>
