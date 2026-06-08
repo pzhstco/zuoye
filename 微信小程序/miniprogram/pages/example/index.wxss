@@ -1,0 +1,9 @@
+/* pages/example/index.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  color: #333;
+}

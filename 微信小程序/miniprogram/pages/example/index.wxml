@@ -1,0 +1,4 @@
+<!--pages/example/index.wxml-->
+<view class="container">
+  <text class="title">示例页面</text>
+</view>
